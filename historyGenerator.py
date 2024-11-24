@@ -1,13 +1,13 @@
 import random
 import json
 
-def loadHistories(filename="histories.json"):
-    with open(filename, 'r', encoding='utf-8') as file:
+def loadHistories():
+    with open("histories.json", 'r', encoding='utf-8') as file:
         histories = json.load(file)
     return histories
 
-def generateHistory(histories):
-    history = random.choice(histories)
+def generateHistory():
+    history = random.choice(loadHistories())
     
     population_left = random.randint(history['population_left_range'][0], history['population_left_range'][1])
     
